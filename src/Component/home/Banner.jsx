@@ -2,7 +2,7 @@
 import {makeStyles,Box,Typography} from '@material-ui/core';
 const useStyles= makeStyles({
     image:{
-        background: `url(${'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg'})center/55% repeat-x`,
+        background: `url(${'https://www.gstatic.com/webp/gallery/1.jpg'})center/55% repeat-x`,
         width:"100%",
         height:"50vh",
         display:'flex',
