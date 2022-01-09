@@ -18,7 +18,7 @@ function App ()
   
     
   <Route exact path="/" component={Home}/>
-  <Route  exact path ="/details" component={Detailview}/>
+  <Route  exact path ="/details/:id" component={Detailview}/>
    </Switch>
     </Box>
     </BrowserRouter>
