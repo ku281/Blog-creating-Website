@@ -1,6 +1,6 @@
-
 import {Button,makeStyles,Table,TableRow,TableHead,TableBody,TableCell} from '@material-ui/core';
 import {categories} from '../../constants/data';
+import {Link,useLocation} from 'react-router-dom';
 const useStyles=makeStyles({
     create:{
         margimn:20,
@@ -17,15 +17,18 @@ const useStyles=makeStyles({
 
 const Categories=()=>{
     const classes=useStyles();
-    return(<><button variant="contained" className={classes.create}>create blog</button>
+    const location=useLocation();
+    return(<><Link to={`/create/${location.search}`}><Button variant="contained" className={classes.create}>create blog</Button></Link>
     <Table className={classes.table}>
-        <TableHead><TableRow><TableCell>
-            All Categories</TableCell></TableRow></TableHead>
+        <TableHead><TableCell>
+            <Link to={'/'}>
+            All Categories</Link></TableCell></TableHead>
             <TableBody>
-                {
-                    categories.map(category=>(
+                
+                    {categories.map(category=>(
                         <TableRow>
-                            <TableCell>{category}</TableCell>
+                            <TableCell>
+                                <Link to={`/?category=${category}`} className={classes.link}>{category}</Link></TableCell>
                         </TableRow>
                     ))
 }
@@ -35,3 +38,4 @@ const Categories=()=>{
 )
 }
 export default Categories;
+
